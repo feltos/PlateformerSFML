@@ -22,13 +22,16 @@ public:
 	void update(sf::Time dt);
 	void draw(sf::RenderWindow& window);
 	RectType GetRectType();
-	
+	void Move();
+	void BeginContact(b2Contact* contact);
+	void EndContact(b2Contact* contact);
 private:
 	sf::RectangleShape rectShape;
 	sf::Vector2f centerPos;
 	sf::Vector2f pixelSize;
 	b2Body* body = nullptr;
 	b2Fixture* box = nullptr;
+	int numFootContacts;
 	RectType rectType;
 };
 

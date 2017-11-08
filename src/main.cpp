@@ -36,10 +36,14 @@ int main(int argc, const char* argv[])
 		sf::Event event;
 		while (window.pollEvent(event))
 		{
+			
 			// "close requested" event: we close the window
 			if (event.type == sf::Event::Closed)
 				window.close();
 		}
+
+		rect.Move();
+
 		world.Step(timeStep, velocityIterations, positionIterations);
 		rect.update(dt);
 
